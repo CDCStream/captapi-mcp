@@ -1,0 +1,59 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.CDCStream/captapi",
+  "title": "Captapi",
+  "description": "Public social media data: profiles, posts, comments, transcripts and ad libraries, 30+ platforms.",
+  "version": "0.5.0",
+  "websiteUrl": "https://captapi.com",
+  "repository": {
+    "url": "https://github.com/CDCStream/captapi",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@captapi/mcp",
+      "version": "0.5.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "CAPTAPI_API_KEY",
+          "description": "Your capt_live_... API key. Create one at https://captapi.com/dashboard/api-keys (100 free credits).",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "CAPTAPI_BASE_URL",
+          "description": "Override the Captapi API base URL (default https://api.captapi.com).",
+          "isRequired": false
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.captapi.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Captapi API key as a Bearer token. Create one at https://captapi.com/dashboard/api-keys.",
+          "value": "Bearer {api_key}",
+          "isRequired": true,
+          "isSecret": true,
+          "variables": {
+            "api_key": {
+              "description": "Your Captapi API key (capt_live_...).",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "capt_live_..."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
