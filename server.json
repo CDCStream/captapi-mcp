@@ -3,10 +3,10 @@
   "name": "io.github.CDCStream/captapi",
   "title": "Captapi",
   "description": "Public social media data: profiles, posts, comments, transcripts and ad libraries, 30+ platforms.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "websiteUrl": "https://captapi.com",
   "repository": {
-    "url": "https://github.com/CDCStream/captapi",
+    "url": "https://github.com/CDCStream/captapi-mcp",
     "source": "github"
   },
   "packages": [
